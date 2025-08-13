@@ -1,0 +1,19 @@
+# For WhatsApp groups with more than 50 participants that were created in October 2024, what is the average number of messages sent? 
+# This insight will help assess engagement in larger groups and support recommendations for group messaging features.
+
+
+# Note: pandas and numpy are already imported as pd and np
+# The following tables are loaded as pandas DataFrames with the same names: dim_groups
+# Please print your final result or dataframe
+
+
+# for a group more than 50 in oct 2024
+filtered_groups = dim_groups[(dim_groups['created_date'].dt.year == 2024) &
+                           (dim_groups['created_date'].dt.month == 10) &
+                           (dim_groups['participant_count'] > 50)]
+
+# find average messages in the filtered group_id
+avg_messages = filtered_groups['total_messages'].mean()
+
+# print the result
+print(f"The average number messages sent for filtered group is : {avg_messages}")
