@@ -1,8 +1,10 @@
-### Q1: For the product categories identified in the previous question, what is the percentage difference between their CTR and the overall average CTR for October 2024?
-# This analysis will quantify the performance gap to recommend specific categories for targeted advertising optimization.
-# Note: pandas and numpy are already imported as pd and np
-# The following tables are loaded as pandas DataFrames with the same names: fct_ad_performance, dim_product
-# Please print your final result or dataframe
+"""
+Q1: For the product categories identified in the previous question, what is the percentage difference between their CTR and the overall average CTR for October 2024?
+This analysis will quantify the performance gap to recommend specific categories for targeted advertising optimization.
+Note: pandas and numpy are already imported as pd and np
+The following tables are loaded as pandas DataFrames with the same names: fct_ad_performance, dim_product
+Please print your final result or dataframe
+"""
 
  # merge the two dfs
 df = pd.merge(fct_ad_performance, dim_product, on = 'product_id', how = 'inner')
@@ -30,9 +32,11 @@ high_performing_categories['pct_difference'] = ((high_performing_categories['ctr
 print(high_performing_categories[['product_category', 'pct_difference']])
 
 
-### Q2: Which product categories have a CTR greater than the aggregated overall average CTR for sponsored product ads during October 2024?
-# This analysis will identify high-performing categories for further optimization.
-# For this question, we want to calculate CTR for each ad, then get the average across ads by product category & overall.
+"""
+Q2: Which product categories have a CTR greater than the aggregated overall average CTR for sponsored product ads during October 2024?
+This analysis will identify high-performing categories for further optimization.
+For this question, we want to calculate CTR for each ad, then get the average across ads by product category & overall.
+"""
 
 # merge the two dfs
 df = pd.merge(fct_ad_performance, dim_product, on = 'product_id', how = 'inner')
@@ -57,8 +61,10 @@ high_performing_categories = category_avg_ctr[category_avg_ctr['ctr_individual']
 print(high_performing_categories)
 
 
-### Q3: For the product categories identified in the previous question, what is the percentage difference between their CTR and the overall average CTR for October 2024?
-# This analysis will quantify the performance gap to recommend specific categories for targeted advertising optimization.
+"""
+Q3: For the product categories identified in the previous question, what is the percentage difference between their CTR and the overall average CTR for October 2024?
+This analysis will quantify the performance gap to recommend specific categories for targeted advertising optimization.
+"""
 
  # merge the two dfs
 df = pd.merge(fct_ad_performance, dim_product, on = 'product_id', how = 'inner')
